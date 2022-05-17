@@ -23,7 +23,7 @@ use std::borrow::Cow;
 /// assert_eq!("נקוד", word);
 /// ```
 ///
-pub fn remove<'s>(string: &'s str) -> Cow<'s, str> {
+pub fn remove(string: &str) -> Cow<'_, str> {
     string.chars().filter(|&c| !is_diacritic(c)).collect()
 }
 /// ```
@@ -32,7 +32,7 @@ pub fn remove<'s>(string: &'s str) -> Cow<'s, str> {
 /// assert_eq!("גרשים", word);
 /// ```
 ///
-pub fn remove_thorough<'s>(string: &'s str) -> Cow<'s, str> {
+pub fn remove_thorough(string: &str) -> Cow<'_, str> {
     string
         .chars()
         .filter(|&c| !is_diacritic(c) && !is_special(c))
