@@ -55,12 +55,15 @@ fn is_special(c: char) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use crate::remove;
+    use crate::{is_diacritic, is_special};
 
     #[test]
-    fn test_normal_remove() {
-        let string = remove("שָׁלוֹם עוֹלָם");
+    fn is_hebrew_alphabet_letter() {
+        let alphabet = "אבגדהוזחטיכךלמםנןסעפףצץקרשת";
 
-        assert_eq!("שלום עולם", string);
+        for c in alphabet.chars() {
+            assert!(!is_diacritic(c));
+            assert!(!is_special(c));
+        }
     }
 }
