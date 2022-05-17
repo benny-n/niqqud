@@ -1,6 +1,6 @@
 //! Lightweight library for removing hebrew diacritics ("Niqqud", Hebrew: נִקּוּד) from a string.
 //!
-//! reference: https://www.unicode.org/charts/PDF/U0590.pdf
+//! reference: <https://www.unicode.org/charts/PDF/U0590.pdf>
 //!
 //! Examples
 //! --------
@@ -17,6 +17,9 @@
 //! ```
 
 use std::borrow::Cow;
+/// Removes hebrew diacritics from a string.
+///
+/// Note: this function does NOT remove hebrew quotes ('״', '׳').
 /// ```
 ///
 /// let word = niqqud::remove("נִקּוּד");
@@ -26,6 +29,7 @@ use std::borrow::Cow;
 pub fn remove(string: &str) -> Cow<'_, str> {
     string.chars().filter(|&c| !is_diacritic(c)).collect()
 }
+/// Removes hebrew diacritics from a string, while also removing hebrew quotes ('״', '׳').
 /// ```
 ///
 /// let word = niqqud::remove_thorough("״גֵּרְשַׁיִם״");
