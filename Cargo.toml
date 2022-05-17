@@ -2,6 +2,13 @@
 name = "niqqud"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["Benny Nazimov <benick12@gmail.com>"]
+description = "A lightweight library for removing hebrew diacritics"
+documentation = "https://docs.rs/niqqud"
+repository = "https://github.com/benny-n/niqqud"
+keywords = ["hebrew", "diacritics", "diacritics-removal", "language"]
+categories = ["text-processing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
